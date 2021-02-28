@@ -179,7 +179,7 @@ body, html {
     position: absolute;
     top: 30%;
     left: 10%;
-    height: 40%;
+    height: 45%;
     width: 80%;
     background-color: #f2f4e7;
     border-top-left-radius: 20px;
@@ -221,4 +221,35 @@ body, html {
     width: 100%;
     transform: translateX(-50%) translateY(-50%);
 }
+
+.styled-table {
+    border-collapse: collapse;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    width: 100%;
+    padding-top: 230px;
+    font-weight: bold;
+}
+
+.styled-table thead tr {
+    background-color: #00094f;
+    color: #ffffff;
+    text-align: center;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 2px 6px;
+    text-align: left;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+
 

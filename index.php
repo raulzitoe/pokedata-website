@@ -20,6 +20,55 @@
                         </div>
                     </div>
                         <div id="left-screen">
+                            <?php                        
+                                if(isset($_POST['search'])){
+                                    $Name = $_POST['getname'];//Whatever we are typing in getname we are storing it in $name...
+                                    $query = "SELECT * FROM pokemons WHERE poke_name='$Name'";// writing the query to fetch data from which table and which data...
+                                    $run = mysqli_query($conn, $query);// we are running the above query here
+   
+                                    while($row = mysqli_fetch_array($run)){
+                                    ?>
+                                    <form action="" method="POST">
+                                        <?php echo '<img src="data:image; base64,'.base64_encode($row['image']).'" alt="Image" style="display: block; max-height:100px; margin: auto; padding-top: 15px;">';?><br>
+                                        <table class="styled-table">
+                                            <thead>
+                                            <tr>
+                                                <td>Name: </td>
+                                                <td><?php echo $row['poke_name'];?></td>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td>ID: </td>
+                                                <td><?php echo $row['id'];?> </td>
+                                            </tr>
+                                            
+                                            <tr>
+                                                <td>Type: </td>
+                                                <td><?php echo $row['type'];?></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Attack: </td>
+                                                <td><?php echo $row['attack'];?></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Defense: </td>
+                                                <td><?php echo $row['defense'];?></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Level to Evolve: </td>
+                                                <td><?php echo $row['level_of_evolve'];?></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Description: </td>
+                                                <td><?php echo $row['description'];?></td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    <?php
+                                    }
+                                }
+                            ?>
                         </div>
                 </div>
             </div>
@@ -39,15 +88,17 @@
                 </svg>
                 <div class="search-box">
                     <form action="" method="POST">
-                        <input type="search" id="input-search" placeholder="Type Pokemon">
+                        <input type="search" name="getname" id="input-search" placeholder="Type Pokemon">
                         <div id='search-button'>
                             <img src='images/search_icon.png' />
                         </div>
+                        <input type="submit" name="search" value="Search Data">
                     </form>
                 </div>
                 <div id="button-section">
                     <button type="button" class="tab-button">Click</button>
                     <button type="button" class="tab-button">Click Me!</button>
+                    
                 </div>
             </div>
         </div>
