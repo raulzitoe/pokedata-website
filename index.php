@@ -7,11 +7,22 @@
     
     <head>
         <link rel="stylesheet" href="styles.css">
+        <script src="scripts.js"></script>
     </head>
 
     <body>
         <div class="container">
             <div id="pokedex-left">
+
+                <div id="camera-container">
+                    <div id="camera">
+                        <div id="camera-half-circle"></div>
+                        <div id="camera-inner-circle"></div>
+                    </div>
+                </div>
+                
+
+
                 <div id="left-screen-container">
                     <div id="red-dot-container">
                         <div id="small-red-dot">
@@ -28,9 +39,9 @@
    
                                     while($row = mysqli_fetch_array($run)){
                                     ?>
-                                    <form action="" method="POST">
-                                        <?php echo '<img src="data:image; base64,'.base64_encode($row['image']).'" alt="Image" style="display: block; max-height:100px; margin: auto; padding-top: 15px;">';?><br>
-                                        <table class="styled-table">
+                                    <div style="height: 100%;">
+                                        <?php echo '<img id="poke_image" src="data:image; base64,'.base64_encode($row['image']).'" alt="Image" style="display: block; max-height:100px; margin: auto; padding-top: 15px;">';?><br>
+                                        <table id="poke_info" class="styled-table">
                                             <thead>
                                             <tr>
                                                 <td>Name: </td>
@@ -65,12 +76,51 @@
                                             </tr>
                                             </tbody>
                                         </table>
+                                    </div>
                                     <?php
                                     }
                                 }
                             ?>
                         </div>
+                        <div id="redcircle"></div>
+                        <div id="vents-container">
+                            <div id="vents"></div>
+                            <div id="vents"></div>
+                            <div id="vents"></div>
+                        </div>
+                        
                 </div>
+
+                <div id= "crabs">
+                    <div class="apper">
+                        <div class="center positioning">
+                            <div class="center-circle"></div>
+                        </div>
+                        
+                        <div class="up direction">
+                            <div class="up-triangle"></div>
+                        </div>
+
+                        <div class="right direction">
+                            <div class="right-triangle"></div>
+                        </div>
+                        <div class="down direction">
+                            <div class="down-triangle"></div>
+                        </div>
+
+                        <div class="left direction">
+                            <div class="left-triangle"></div>
+                        </div>
+                    </div>
+                </div>
+
+
+                
+              
+                <div id="circle"></div>
+                <div id="retgr"></div>
+                <div id="retor"></div>
+                <div id="retye"></div>
             </div>
             <div id="pokedex-middle">
                 <div id="middle-bar1"></div>
@@ -95,12 +145,37 @@
                         <input type="submit" name="search" value="Search Data">
                     </form>
                 </div>
+
+                <div id="blue-pannel">
+                    <div id="blue-pannel-row-1">
+                        <div id="blueboard" style="border-radius: 15px 0px 0px 0px;"></div>
+                        <div id="blueboardmiddle"></div>
+                        <div id="blueboardmiddle"></div>
+                        <div id="blueboardmiddle"></div>
+                        <div id="blueboard" style="border-radius: 0px 15px 0px 0px;"></div>
+                    </div>
+                    <div id="blue-pannel-row-2">
+                        <div id="blueboardbotton" style="border-radius: 0px 0px 0px 15px;"></div>
+                        <div id="blueboardmiddle"></div>
+                        <div id="blueboardmiddle"></div>
+                        <div id="blueboardmiddle"></div>
+                        <div id="blueboardbotton" style="border-radius: 0px 0px 15px 0px;"></div>
+                    </div>
+                </div>
+
+                <div id="yellow-light">
+                    <div id="yellow-light-blink"></div>
+                </div>
+
                 <div id="button-section">
-                    <button type="button" class="tab-button">Click</button>
-                    <button type="button" class="tab-button">Click Me!</button>
+                    <button type="button" class="tab-button" onclick="poke_info()">Info</button>
+                    <button type="button" class="tab-button" onclick="poke_image()">Image</button>
                     
                 </div>
             </div>
         </div>
     </body>
+    <footer class="footer">
+        <a href="insert.php">Add new Pokemon</a>
+    </footer>
 </html>
