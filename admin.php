@@ -11,7 +11,8 @@
 	$level_of_evolve= $_POST['level_of_evolve'];
 	$description= $_POST['description'];
 	// $image= $_POST['image'];
-	$image = file_get_contents($_FILES['image']['tmp_name']);
+
+	$image  =   addslashes(file_get_contents($_FILES['image']['tmp_name']));
 
 	// Making sure no data should go empty in the database
 
@@ -19,7 +20,7 @@
 
 		// Querry of Insertion
 
-		$query = "INSERT INTO pokemons(id, poke_name, type, attack, defense, level_of_evolve, description, image)VALUES ('$id','$name','$type','$attack','$defense','$level_of_evolve','$description', '$image');";
+		$query = "INSERT INTO pokemons (id, poke_name, type, attack, defense, level_of_evolve, description, image) VALUES ('$id','$name','$type','$attack','$defense','$level_of_evolve','$description', '$image');";
 		mysqli_query($conn, $query);
 
 	}
