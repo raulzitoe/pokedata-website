@@ -153,7 +153,7 @@ include_once "db_connection.php";
                     <div id='search-button'>
                         <img src='images/search_icon.png' />
                     </div>
-                    <input type="submit" name="search" value="Search Data">
+                    <input style="background-color:transparent; border:none" type="submit" src='images/search_icon.png' name="search" value="">
                 </form>
             </div>
 
