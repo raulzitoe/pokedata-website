@@ -33,6 +33,6 @@
 
 
 		//After the insertion of data through submit button. It will not leave the page. So we need to set location that will switch user back to the form page)
-		header("Location: ./Index.php?admin=success");
+		header("Location: ./Index.php");
 
 	?>
