@@ -18,7 +18,7 @@
 
 	if (!empty($id) || !empty($name) || !empty($type) || !empty($attack) ||!empty($defense) || !empty($level_of_evolve) || !empty($description)){
 
-		// Querry of Insertion
+		// Query of Insertion
 
 		$query = "INSERT INTO pokemons (id, poke_name, type, attack, defense, level_of_evolve, description, image) VALUES ('$id','$name','$type','$attack','$defense','$level_of_evolve','$description', '$image');";
 		mysqli_query($conn, $query);

@@ -12,28 +12,6 @@
 </head>
 
 <body>
-	<!-- <div id="form-container">
-		<form action="admin.php" method="POST" enctype="multipart/form-data">
-			Id: <input type="number" name="uid" placeholder="Unique Id" required><br><br>
-
-			Pokemon: <input type="text" name="name" placeholder="Name" required><br><br>
-
-			Type: <input type="text" name="type" placeholder="Water, Flying, Fire, etc" required><br><br>
-
-			Attack: <input type="number" name="attack" placeholder="Attacking skills" required><br><br>
-
-			Defense: <input type="number" name="defense" placeholder="Defensing skills" required><br><br>
-
-			Level Of Evolve: <input type="number" name="level_of_evolve" placeholder="Upgradation" required><br><br>
-
-			Description: <input type="text" name="description" placeholder="Details" required><br><br>
-
-			Image: <input type="file" name="image" required><br><br>
-
-			<button type="submit" name="submit">Get Into the Pokeball</button>
-		</form>
-	</div> -->
-
 
 	<div class="form-container">
 		<div class="form-panel one">
